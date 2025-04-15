@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const loadUser = async () => {
       if (token) {
         try {
-          const response = await fetch("http://localhost:5000/api/auth/me", {
+          const response = await fetch("http://35.174.137.52:5000/api/auth/me", {
             headers: {
               "x-auth-token": token,
             },
@@ -61,7 +61,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("http://35.174.137.52:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +79,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setToken(data.token);
       
       // Fetch user data
-      const userResponse = await fetch("http://localhost:5000/api/auth/me", {
+      const userResponse = await fetch("http://35.174.137.52:5000/api/auth/me", {
         headers: {
           "x-auth-token": data.token,
         },
@@ -98,7 +98,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const register = async (name: string, email: string, password: string, address: string) => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch("http://35.174.137.52:5000/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +116,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setToken(data.token);
       
       // Fetch user data
-      const userResponse = await fetch("http://localhost:5000/api/auth/me", {
+      const userResponse = await fetch("http://35.174.137.52:5000/api/auth/me", {
         headers: {
           "x-auth-token": data.token,
         },
